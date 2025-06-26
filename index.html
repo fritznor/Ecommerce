@@ -7,8 +7,93 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      /* Fond animé bulles */
+      .animated-bg {
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .bubble {
+        position: absolute;
+        bottom: -100px;
+        background: rgba(0,123,255,0.15);
+        border-radius: 50%;
+        animation: rise 12s linear infinite;
+      }
+      @keyframes rise {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0.7;
+        }
+        80% {
+          opacity: 0.5;
+        }
+        100% {
+          transform: translateY(-110vh) scale(1.2);
+          opacity: 0;
+        }
+      }
+      /* Pour que le contenu soit au-dessus du fond animé */
+      body > *:not(.animated-bg) {
+        position: relative;
+        z-index: 1;
+      }
+      /* Amélioration visuelle */
+      .navbar {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      .video-overlay {
+        background: rgba(0,0,0,0.5);
+      }
+      .category-title {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #007bff;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+      .card {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 8px 24px rgba(0,123,255,0.12);
+      }
+      footer {
+        letter-spacing: 1px;
+      }
+    </style>
 </head>
 <body>
+    <!-- Fond animé bulles -->
+    <div class="animated-bg">
+      <!-- Génère 20 bulles de tailles et positions différentes -->
+      <div class="bubble" style="left:5vw;width:40px;height:40px;animation-delay:0s;"></div>
+      <div class="bubble" style="left:15vw;width:25px;height:25px;animation-delay:2s;"></div>
+      <div class="bubble" style="left:25vw;width:60px;height:60px;animation-delay:4s;"></div>
+      <div class="bubble" style="left:35vw;width:30px;height:30px;animation-delay:1s;"></div>
+      <div class="bubble" style="left:45vw;width:50px;height:50px;animation-delay:3s;"></div>
+      <div class="bubble" style="left:55vw;width:35px;height:35px;animation-delay:5s;"></div>
+      <div class="bubble" style="left:65vw;width:55px;height:55px;animation-delay:2.5s;"></div>
+      <div class="bubble" style="left:75vw;width:28px;height:28px;animation-delay:6s;"></div>
+      <div class="bubble" style="left:85vw;width:45px;height:45px;animation-delay:1.5s;"></div>
+      <div class="bubble" style="left:95vw;width:38px;height:38px;animation-delay:3.5s;"></div>
+      <div class="bubble" style="left:10vw;width:32px;height:32px;animation-delay:7s;"></div>
+      <div class="bubble" style="left:20vw;width:48px;height:48px;animation-delay:8s;"></div>
+      <div class="bubble" style="left:30vw;width:36px;height:36px;animation-delay:9s;"></div>
+      <div class="bubble" style="left:40vw;width:42px;height:42px;animation-delay:10s;"></div>
+      <div class="bubble" style="left:50vw;width:29px;height:29px;animation-delay:11s;"></div>
+      <div class="bubble" style="left:60vw;width:53px;height:53px;animation-delay:12s;"></div>
+      <div class="bubble" style="left:70vw;width:34px;height:34px;animation-delay:13s;"></div>
+      <div class="bubble" style="left:80vw;width:41px;height:41px;animation-delay:14s;"></div>
+      <div class="bubble" style="left:90vw;width:39px;height:39px;animation-delay:15s;"></div>
+      <div class="bubble" style="left:98vw;width:27px;height:27px;animation-delay:16s;"></div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -46,20 +131,372 @@
 
     <!-- Section 2: Produits -->
     <section id="products" class="container py-5">
-      <h2 class="mb-4" data-key="our_products">Pwodui nou yo</h2>
+      <h2 class="mb-4 text-center" data-key="our_products">Pwodui nou yo</h2>
+      <!-- Catégorie 1 : Électronique -->
+      <div class="category-title">Électronique</div>
       <div class="row">
-        <!-- Exemple de produit -->
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <img src="assets/img/product1.jpg" class="card-img-top" alt="Produit 1">
+        <!-- 12 produits électroniques -->
+        <!-- ...pour chaque produit, change l'image si tu veux... -->
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Laptop">
             <div class="card-body">
-              <h5 class="card-title" data-key="product1">Pwodui 1</h5>
-              <p class="card-text" data-key="product1_desc">Deskripsyon kout pou pwodwi 1.</p>
+              <h5 class="card-title">Laptop Pro</h5>
+              <p class="card-text">Laptop rapid ak modèn pou travay ou.</p>
               <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
             </div>
           </div>
         </div>
-        <!-- ...Ajoute plis pwodwi si ou vle... -->
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Smartphone">
+            <div class="card-body">
+              <h5 class="card-title">Smartphone X</h5>
+              <p class="card-text">Telefòn entelijan ak kamera HD.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Tablet">
+            <div class="card-body">
+              <h5 class="card-title">Tablet Plus</h5>
+              <p class="card-text">Tablet pou lekti ak travay fasil.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Camera">
+            <div class="card-body">
+              <h5 class="card-title">Kamera Pro</h5>
+              <p class="card-text">Kamera pwofesyonèl pou foto klè.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Casque">
+            <div class="card-body">
+              <h5 class="card-title">Kas Ekoutè</h5>
+              <p class="card-text">Ekoutè bluetooth ak bon son.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Montre connectée">
+            <div class="card-body">
+              <h5 class="card-title">Montre Connectée</h5>
+              <p class="card-text">Montre entelijan pou sante ou.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Enceinte Bluetooth">
+            <div class="card-body">
+              <h5 class="card-title">Boc Bluetooth</h5>
+              <p class="card-text">Boc pou mizik tout kote.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Clé USB">
+            <div class="card-body">
+              <h5 class="card-title">USB 64Go</h5>
+              <p class="card-text">Kle USB rapid ak gwo kapasite.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Chargeur">
+            <div class="card-body">
+              <h5 class="card-title">Chargeur Rapide</h5>
+              <p class="card-text">Chargeur pou tout aparèy ou yo.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Disque Dur">
+            <div class="card-body">
+              <h5 class="card-title">Disque Dur 1To</h5>
+              <p class="card-text">Disque dur ekstèn pou backup.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Webcam">
+            <div class="card-body">
+              <h5 class="card-title">Webcam HD</h5>
+              <p class="card-text">Webcam pou reyinyon sou entènèt.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4" >
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Imprimante">
+            <div class="card-body">
+              <h5 class="card-title">Imprimante WiFi</h5>
+              <p class="card-text">Imprimante san fil pou biwo ou.</p>
+              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Catégorie 2 : Vêtements -->
+      <div class="category-title">Vêtements</div>
+      <div class="row">
+        <!-- 12 produits vêtements -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="T-shirt">
+            <div class="card-body">
+              <h5 class="card-title">T-shirt Fashion</h5>
+              <p class="card-text">T-shirt modèn ak konfòtab.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Chemise">
+            <div class="card-body">
+              <h5 class="card-title">Chemise Slim</h5>
+              <p class="card-text">Chemise élégante pou travay.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Robe">
+            <div class="card-body">
+              <h5 class="card-title">Robe Été</h5>
+              <p class="card-text">Robe lejè pou sezon cho.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1469398715555-76331a6c7fa0?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Jean">
+            <div class="card-body">
+              <h5 class="card-title">Jean Classic</h5>
+              <p class="card-text">Jean solid ak style klasik.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Jupe">
+            <div class="card-body">
+              <h5 class="card-title">Jupe Chic</h5>
+              <p class="card-text">Jupe pou okazyon espesyal.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Sweat">
+            <div class="card-body">
+              <h5 class="card-title">Sweat Sport</h5>
+              <p class="card-text">Sweat pou espò ak lwazi.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Veste">
+            <div class="card-body">
+              <h5 class="card-title">Veste Denim</h5>
+              <p class="card-text">Veste pou tout sezon.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Short">
+            <div class="card-body">
+              <h5 class="card-title">Short Plaj</h5>
+              <p class="card-text">Short konfòtab pou plaj.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1469398715555-76331a6c7fa0?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Manteau">
+            <div class="card-body">
+              <h5 class="card-title">Manteau Hivernal</h5>
+              <p class="card-text">Manteau cho pou sezon fredi.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Pantalon">
+            <div class="card-body">
+              <h5 class="card-title">Pantalon Slim</h5>
+              <p class="card-text">Pantalon élégance ak konfò.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Pull">
+            <div class="card-body">
+              <h5 class="card-title">Pull Laine</h5>
+              <p class="card-text">Pull cho ak style modèn.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Blazer">
+            <div class="card-body">
+              <h5 class="card-title">Blazer Classique</h5>
+              <p class="card-text">Blazer pou travay ak fèt.</p>
+              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Catégorie 3 : Accessoires -->
+      <div class="category-title">Accessoires</div>
+      <div class="row">
+        <!-- 12 produits accessoires -->
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Sac à dos">
+            <div class="card-body">
+              <h5 class="card-title">Sac à dos Urban</h5>
+              <p class="card-text">Sac pratik pou chak jou.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Lunettes">
+            <div class="card-body">
+              <h5 class="card-title">Lunettes Soleil</h5>
+              <p class="card-text">Lunèt pou solèy ak style.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Montre">
+            <div class="card-body">
+              <h5 class="card-title">Montre Élégante</h5>
+              <p class="card-text">Montre pou gason ak fi.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Ceinture">
+            <div class="card-body">
+              <h5 class="card-title">Ceinture Cuir</h5>
+              <p class="card-text">Ceinture élégante pou pantalon.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Portefeuille">
+            <div class="card-body">
+              <h5 class="card-title">Portefeuille</h5>
+              <p class="card-text">Portefeuille pratik ak modèn.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Casquette">
+            <div class="card-body">
+              <h5 class="card-title">Casquette Style</h5>
+              <p class="card-text">Casquette pou solèy ak style.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Bracelet">
+            <div class="card-body">
+              <h5 class="card-title">Bracelet Mode</h5>
+              <p class="card-text">Bracelet pou tout okazyon.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Chapeau">
+            <div class="card-body">
+              <h5 class="card-title">Chapeau Été</h5>
+              <p class="card-text">Chapo pou pwoteksyon solèy.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Écharpe">
+            <div class="card-body">
+              <h5 class="card-title">Écharpe Douce</h5>
+              <p class="card-text">Écharpe pou sezon fredi.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Gants">
+            <div class="card-body">
+              <h5 class="card-title">Gants Hiver</h5>
+              <p class="card-text">Gants cho pou men ou.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Parapluie">
+            <div class="card-body">
+              <h5 class="card-title">Parapluie Compact</h5>
+              <p class="card-text">Parapli pou lapli ak solèy.</p>
+              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
