@@ -118,14 +118,15 @@
     </nav>
 
     <!-- Section 1: Video Background -->
-    <section id="home" class="video-section position-relative">
-      <video autoplay muted loop class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" id="bg-video">
+    <section id="home" class="video-section position-relative" style="height: 60vh; min-height: 350px; overflow: hidden;">
+      <video autoplay muted loop playsinline class="w-100 h-100 position-absolute top-0 start-0 object-fit-cover" id="bg-video">
         <source src="assets/video/bg.mp4" type="video/mp4">
-        <!-- ... -->
+        <!-- Si video a pa chaje, mete yon imaj fallback -->
+        Votre navigateur ne supporte pas la vidéo HTML5.
       </video>
-      <div class="video-overlay d-flex flex-column justify-content-center align-items-center text-white">
-        <h1 data-key="welcome">Byenveni sou sit Ecommerce nou an!</h1>
-        <p data-key="slogan">Pi bon pwodwi yo, pi bon pri yo.</p>
+      <div class="video-overlay d-flex flex-column justify-content-center align-items-center text-white" style="z-index:2; position:relative; height:100%;">
+        <h1 data-key="welcome" class="display-4 fw-bold mb-3 text-shadow">Byenveni sou sit Ecommerce nou an!</h1>
+        <p data-key="slogan" class="lead text-shadow">Pi bon pwodwi yo, pi bon pri yo.</p>
       </div>
     </section>
 
