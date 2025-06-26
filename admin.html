@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Mon Ecommerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8f9fa; }
+    .admin-header { background: #007bff; color: #fff; padding: 1.5rem 0; margin-bottom: 2rem; }
+    .footer-fixed {
+      position: fixed; left: 0; right: 0; bottom: 0;
+      background: #222; color: #fff; text-align: center;
+      padding: 1rem 0; z-index: 10; letter-spacing: 1px;
+    }
+    .table img { width: 40px; height: 40px; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <div class="admin-header text-center">
+    <h2>PANEL ADMIN</h2>
+    <a href="index.html" class="btn btn-light btn-sm mt-2">Retounen sou sit la</a>
+  </div>
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <h4>Ajoute yon nouvo pwodwi</h4>
+        <form id="add-product-form" class="bg-white p-3 rounded shadow-sm">
+          <div class="mb-2">
+            <input type="text" class="form-control" id="prod-name" placeholder="Non pwodwi" required>
+          </div>
+          <div class="mb-2">
+            <input type="number" class="form-control" id="prod-price" placeholder="Pri" required>
+          </div>
+          <div class="mb-2">
+            <input type="url" class="form-control" id="prod-img" placeholder="URL imaj" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Ajoute</button>
+        </form>
+        <h5 class="mt-4">Lis pwodwi yo</h5>
+        <table class="table table-bordered bg-white" id="products-table">
+          <thead>
+            <tr><th>Imaj</th><th>Non</th><th>Pri</th><th>Retire</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="col-lg-6 mb-4">
+        <h4>Commandes yo</h4>
+        <div id="orders-list" class="bg-white p-3 rounded shadow-sm" style="min-height:120px;">
+          <div class="text-muted">Pa gen okenn commande (demo).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-fixed">
+    <span>© 2024 Ecommerce. Tout dwa rezève.</span>
+  </footer>
+  <script>
+    // Gestion produits (localStorage demo)
+    function getProducts() {
+      return JSON.parse(localStorage.getItem('admin_products') || '[]');
+    }
+    function saveProducts(products) {
+      localStorage.setItem('admin_products', JSON.stringify(products));
+    }
+    function renderProducts() {
+      const products = getProducts();
+      const tbody = document.querySelector('#products-table tbody');
+      tbody.innerHTML = '';
+      products.forEach((p, i) => {
+        tbody.innerHTML += `<tr>
+          <td><img src="${p.img}" alt=""></td>
+          <td>${p.name}</td>
+          <td>${p.price} $</td>
+          <td><button class="btn btn-danger btn-sm" onclick="removeProduct(${i})">Retire</button></td>
+        </tr>`;
+      });
+    }
+    function removeProduct(i) {
+      let products = getProducts();
+      products.splice(i,1);
+      saveProducts(products);
+      renderProducts();
+    }
+    document.getElementById('add-product-form').onsubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById('prod-name').value.trim();
+      const price = parseFloat(document.getElementById('prod-price').value);
+      const img = document.getElementById('prod-img').value.trim();
+      if (!name || !price || !img) return;
+      let products = getProducts();
+      products.push({ name, price, img });
+      saveProducts(products);
+      renderProducts();
+      this.reset();
+    };
+    renderProducts();
+    // Commandes (demo statique)
+    // Pour une vraie gestion, il faudrait stocker les commandes lors du paiement
+  </script>
+</body>
+</html>
