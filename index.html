@@ -105,7 +105,7 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link active" href="#home" data-key="home">Akèy</a></li>
             <li class="nav-item"><a class="nav-link" href="#products" data-key="products">Pwodui</a></li>
-            <li class="nav-item"><a class="nav-link" href="#cart" data-key="cart">Panier</a></li>
+            <li class="nav-item"><a class="nav-link" href="cart.html" data-key="cart" id="cart-link">Panier</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact" data-key="contact">Kontak</a></li>
           </ul>
           <select id="lang-select" class="form-select w-auto">
@@ -138,14 +138,13 @@
       <div class="category-title">Électronique</div>
       <div class="row">
         <!-- 12 produits électroniques -->
-        <!-- ...pour chaque produit, change l'image si tu veux... -->
         <div class="col-md-3 mb-4" >
           <div class="card h-100">
             <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Laptop">
             <div class="card-body">
               <h5 class="card-title">Laptop Pro</h5>
               <p class="card-text">Laptop rapid ak modèn pou travay ou.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Laptop Pro" data-price="1200" data-img="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -155,7 +154,7 @@
             <div class="card-body">
               <h5 class="card-title">Smartphone X</h5>
               <p class="card-text">Telefòn entelijan ak kamera HD.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Smartphone X" data-price="800" data-img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -165,7 +164,7 @@
             <div class="card-body">
               <h5 class="card-title">Tablet Plus</h5>
               <p class="card-text">Tablet pou lekti ak travay fasil.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Tablet Plus" data-price="600" data-img="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -175,7 +174,7 @@
             <div class="card-body">
               <h5 class="card-title">Kamera Pro</h5>
               <p class="card-text">Kamera pwofesyonèl pou foto klè.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Kamera Pro" data-price="1500" data-img="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -185,7 +184,7 @@
             <div class="card-body">
               <h5 class="card-title">Kas Ekoutè</h5>
               <p class="card-text">Ekoutè bluetooth ak bon son.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Kas Ekoutè" data-price="300" data-img="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -195,7 +194,7 @@
             <div class="card-body">
               <h5 class="card-title">Montre Connectée</h5>
               <p class="card-text">Montre entelijan pou sante ou.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Montre Connectée" data-price="450" data-img="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -205,7 +204,7 @@
             <div class="card-body">
               <h5 class="card-title">Boc Bluetooth</h5>
               <p class="card-text">Boc pou mizik tout kote.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Boc Bluetooth" data-price="350" data-img="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -215,7 +214,7 @@
             <div class="card-body">
               <h5 class="card-title">USB 64Go</h5>
               <p class="card-text">Kle USB rapid ak gwo kapasite.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="USB 64Go" data-price="100" data-img="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -225,7 +224,7 @@
             <div class="card-body">
               <h5 class="card-title">Chargeur Rapide</h5>
               <p class="card-text">Chargeur pou tout aparèy ou yo.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Chargeur Rapide" data-price="150" data-img="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -235,7 +234,7 @@
             <div class="card-body">
               <h5 class="card-title">Disque Dur 1To</h5>
               <p class="card-text">Disque dur ekstèn pou backup.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Disque Dur 1To" data-price="200" data-img="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -245,7 +244,7 @@
             <div class="card-body">
               <h5 class="card-title">Webcam HD</h5>
               <p class="card-text">Webcam pou reyinyon sou entènèt.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Webcam HD" data-price="120" data-img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -255,7 +254,7 @@
             <div class="card-body">
               <h5 class="card-title">Imprimante WiFi</h5>
               <p class="card-text">Imprimante san fil pou biwo ou.</p>
-              <a href="#" class="btn btn-primary" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-primary add-to-cart" data-name="Imprimante WiFi" data-price="250" data-img="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -270,7 +269,7 @@
             <div class="card-body">
               <h5 class="card-title">T-shirt Fashion</h5>
               <p class="card-text">T-shirt modèn ak konfòtab.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="T-shirt Fashion" data-price="25" data-img="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -280,7 +279,7 @@
             <div class="card-body">
               <h5 class="card-title">Chemise Slim</h5>
               <p class="card-text">Chemise élégante pou travay.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Chemise Slim" data-price="40" data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -290,7 +289,7 @@
             <div class="card-body">
               <h5 class="card-title">Robe Été</h5>
               <p class="card-text">Robe lejè pou sezon cho.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Robe Été" data-price="60" data-img="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -300,7 +299,7 @@
             <div class="card-body">
               <h5 class="card-title">Jean Classic</h5>
               <p class="card-text">Jean solid ak style klasik.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Jean Classic" data-price="55" data-img="https://images.unsplash.com/photo-1469398715555-76331a6c7fa0?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -310,7 +309,7 @@
             <div class="card-body">
               <h5 class="card-title">Jupe Chic</h5>
               <p class="card-text">Jupe pou okazyon espesyal.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Jupe Chic" data-price="70" data-img="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -320,7 +319,7 @@
             <div class="card-body">
               <h5 class="card-title">Sweat Sport</h5>
               <p class="card-text">Sweat pou espò ak lwazi.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Sweat Sport" data-price="80" data-img="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -330,7 +329,7 @@
             <div class="card-body">
               <h5 class="card-title">Veste Denim</h5>
               <p class="card-text">Veste pou tout sezon.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Veste Denim" data-price="90" data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -340,7 +339,7 @@
             <div class="card-body">
               <h5 class="card-title">Short Plaj</h5>
               <p class="card-text">Short konfòtab pou plaj.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Short Plaj" data-price="30" data-img="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -350,7 +349,7 @@
             <div class="card-body">
               <h5 class="card-title">Manteau Hivernal</h5>
               <p class="card-text">Manteau cho pou sezon fredi.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Manteau Hivernal" data-price="120" data-img="https://images.unsplash.com/photo-1469398715555-76331a6c7fa0?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -360,7 +359,7 @@
             <div class="card-body">
               <h5 class="card-title">Pantalon Slim</h5>
               <p class="card-text">Pantalon élégance ak konfò.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Pantalon Slim" data-price="85" data-img="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -370,7 +369,7 @@
             <div class="card-body">
               <h5 class="card-title">Pull Laine</h5>
               <p class="card-text">Pull cho ak style modèn.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Pull Laine" data-price="75" data-img="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -380,7 +379,7 @@
             <div class="card-body">
               <h5 class="card-title">Blazer Classique</h5>
               <p class="card-text">Blazer pou travay ak fèt.</p>
-              <a href="#" class="btn btn-success" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-success add-to-cart" data-name="Blazer Classique" data-price="100" data-img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -395,7 +394,7 @@
             <div class="card-body">
               <h5 class="card-title">Sac à dos Urban</h5>
               <p class="card-text">Sac pratik pou chak jou.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Sac à dos Urban" data-price="60" data-img="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -405,7 +404,7 @@
             <div class="card-body">
               <h5 class="card-title">Lunettes Soleil</h5>
               <p class="card-text">Lunèt pou solèy ak style.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Lunettes Soleil" data-price="20" data-img="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -415,7 +414,7 @@
             <div class="card-body">
               <h5 class="card-title">Montre Élégante</h5>
               <p class="card-text">Montre pou gason ak fi.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Montre Élégante" data-price="55" data-img="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -425,7 +424,7 @@
             <div class="card-body">
               <h5 class="card-title">Ceinture Cuir</h5>
               <p class="card-text">Ceinture élégante pou pantalon.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Ceinture Cuir" data-price="25" data-img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -435,7 +434,7 @@
             <div class="card-body">
               <h5 class="card-title">Portefeuille</h5>
               <p class="card-text">Portefeuille pratik ak modèn.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Portefeuille" data-price="30" data-img="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -445,7 +444,7 @@
             <div class="card-body">
               <h5 class="card-title">Casquette Style</h5>
               <p class="card-text">Casquette pou solèy ak style.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Casquette Style" data-price="15" data-img="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -455,7 +454,7 @@
             <div class="card-body">
               <h5 class="card-title">Bracelet Mode</h5>
               <p class="card-text">Bracelet pou tout okazyon.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Bracelet Mode" data-price="10" data-img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -465,7 +464,7 @@
             <div class="card-body">
               <h5 class="card-title">Chapeau Été</h5>
               <p class="card-text">Chapo pou pwoteksyon solèy.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Chapeau Été" data-price="20" data-img="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -475,7 +474,7 @@
             <div class="card-body">
               <h5 class="card-title">Écharpe Douce</h5>
               <p class="card-text">Écharpe pou sezon fredi.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Écharpe Douce" data-price="18" data-img="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -485,7 +484,7 @@
             <div class="card-body">
               <h5 class="card-title">Gants Hiver</h5>
               <p class="card-text">Gants cho pou men ou.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Gants Hiver" data-price="22" data-img="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -495,7 +494,7 @@
             <div class="card-body">
               <h5 class="card-title">Parapluie Compact</h5>
               <p class="card-text">Parapli pou lapli ak solèy.</p>
-              <a href="#" class="btn btn-warning" data-key="add_to_cart">Ajoute nan panier</a>
+              <button class="btn btn-warning add-to-cart" data-name="Parapluie Compact" data-price="25" data-img="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80">Ajoute nan panier</button>
             </div>
           </div>
         </div>
@@ -532,5 +531,24 @@
     <!-- Bootstrap JS + Main JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      // Ajout au panier
+      document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const name = this.getAttribute('data-name');
+          const price = parseFloat(this.getAttribute('data-price'));
+          const img = this.getAttribute('data-img');
+          let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+          const found = cart.find(item => item.name === name);
+          if (found) {
+            found.qty += 1;
+          } else {
+            cart.push({ name, price, img, qty: 1 });
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          alert('Pwodui ajoute nan panier!');
+        });
+      });
+    </script>
 </body>
 </html>

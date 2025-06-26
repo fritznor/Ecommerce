@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Panier - Mon Ecommerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Ecommerce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Akèy</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#products">Pwodui</a></li>
+          <li class="nav-item"><a class="nav-link active" href="cart.html">Panier</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container py-5">
+    <h2 class="mb-4">Panier ou</h2>
+    <div id="cart-items"></div>
+    <div id="cart-total" class="my-3 fw-bold"></div>
+    <h4 class="mt-5 mb-3">Metòd de Peman</h4>
+    <form id="payment-form">
+      <div class="mb-3">
+        <label class="form-label">Chwazi metòd:</label>
+        <select class="form-select" id="payment-method" required>
+          <option value="">-- Chwazi --</option>
+          <option value="card">Kat Bancaire</option>
+          <option value="paypal">PayPal</option>
+          <option value="cash">Lajan Kach (an livrezon)</option>
+        </select>
+      </div>
+      <div id="payment-details"></div>
+      <button type="submit" class="btn btn-success mt-3">Peye</button>
+    </form>
+  </div>
+  <footer class="bg-dark text-white text-center py-3">
+    <span>© 2024 Ecommerce. Tout dwa rezève.</span>
+  </footer>
+  <script>
+    // Afficher le panier
+    function renderCart() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      const container = document.getElementById('cart-items');
+      if (!cart.length) {
+        container.innerHTML = '<div class="alert alert-info">Panier ou vid.</div>';
+        document.getElementById('cart-total').textContent = '';
+        return;
+      }
+      let html = '<table class="table align-middle"><thead><tr><th></th><th>Pwodui</th><th>Pri</th><th>Kantite</th><th>Total</th><th></th></tr></thead><tbody>';
+      let total = 0;
+      cart.forEach((item, i) => {
+        const itemTotal = item.price * item.qty;
+        total += itemTotal;
+        html += `<tr>
+          <td><img src="${item.img}" width="50" height="50" style="object-fit:cover"></td>
+          <td>${item.name}</td>
+          <td>${item.price} $</td>
+          <td>
+            <button class="btn btn-sm btn-outline-secondary" onclick="updateQty(${i},-1)">-</button>
+            <span class="mx-2">${item.qty}</span>
+            <button class="btn btn-sm btn-outline-secondary" onclick="updateQty(${i},1)">+</button>
+          </td>
+          <td>${itemTotal} $</td>
+          <td><button class="btn btn-sm btn-danger" onclick="removeItem(${i})">Retire</button></td>
+        </tr>`;
+      });
+      html += '</tbody></table>';
+      container.innerHTML = html;
+      document.getElementById('cart-total').textContent = 'Total: ' + total + ' $';
+    }
+    function updateQty(i, delta) {
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      cart[i].qty += delta;
+      if (cart[i].qty <= 0) cart.splice(i,1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+    function removeItem(i) {
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      cart.splice(i,1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+    renderCart();
+
+    // Paiement dynamique
+    document.getElementById('payment-method').addEventListener('change', function() {
+      const val = this.value;
+      const details = document.getElementById('payment-details');
+      if (val === 'card') {
+        details.innerHTML = `
+          <div class="mb-2"><input class="form-control" placeholder="Numéro kat" required></div>
+          <div class="mb-2"><input class="form-control" placeholder="MM/AA" required></div>
+          <div class="mb-2"><input class="form-control" placeholder="CVV" required></div>
+        `;
+      } else if (val === 'paypal') {
+        details.innerHTML = `<div class="mb-2"><input class="form-control" placeholder="Imèl PayPal" required></div>`;
+      } else {
+        details.innerHTML = '';
+      }
+    });
+
+    // Simulation paiement
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!JSON.parse(localStorage.getItem('cart') || '[]').length) {
+        alert('Panier ou vid.');
+        return;
+      }
+      alert('Mèsi! Peman ou anrejistre. Nou pral kontakte ou pou livrezon.');
+      localStorage.removeItem('cart');
+      renderCart();
+    });
+  </script>
+</body>
+</html>
