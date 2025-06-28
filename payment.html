@@ -17,19 +17,26 @@
   sandbox="allow-scripts allow-same-origin allow-forms allow-top-navigation">
 </iframe>
 <div id="error-message" style="display:none; color:red; margin-top:10px;">
-  Yon erè rive pandan chajman paj peman an. Tanpri tcheke koneksyon w oswa eseye ankò pita.
+  Yon erè rive pandan chajman paj peman an. Tanpri tcheke koneksyon w oswa eseye ankò pita.<br>
+  <button onclick="window.location.reload()">Rechaje paj la</button>
 </div>
 <script>
-  const iframe = document.getElementById('payment-iframe');
-  let loaded = false;
-  iframe.onload = function() {
-    loaded = true;
-  };
-  setTimeout(function() {
-    if (!loaded) {
-      document.getElementById('error-message').style.display = 'block';
-    }
-  }, 5000); // 5 segonn pou tann iframe a chaje
+  try {
+    const iframe = document.getElementById('payment-iframe');
+    let loaded = false;
+    iframe.onload = function() {
+      loaded = true;
+    };
+    setTimeout(function() {
+      if (!loaded) {
+        document.getElementById('error-message').style.display = 'block';
+        iframe.style.display = 'none';
+      }
+    }, 5000); // 5 segonn pou tann iframe a chaje
+  } catch (e) {
+    document.getElementById('error-message').style.display = 'block';
+    document.getElementById('payment-iframe').style.display = 'none';
+  }
 </script>
 </body>
 </html>
