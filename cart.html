@@ -130,7 +130,7 @@
             </div>
           </div>
           <div id="payment-details" class="payment-details"></div>
-          <button type="submit" class="btn btn-success mt-3 w-100" data-key="pay_btn">Peye</button>
+          <button id="pay-btn" type="submit" class="btn btn-success mt-3 w-100" data-key="pay_btn">Peye</button>
         </form>
       </div>
     </div>
@@ -245,6 +245,10 @@
       alert('Mèsi! Peman ou anrejistre. Nou pral kontakte ou pou livrezon.');
       localStorage.removeItem('cart');
       renderCart();
+    });
+
+    document.getElementById('pay-btn').addEventListener('click', function() {
+      window.location.href = 'payment.html';
     });
   </script>
 </body>
